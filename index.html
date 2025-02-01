@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhutan Cadastral Projection Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <h2>Bhutan Cadastral Parcel: Area Difference Between National and Local Map Projection</h2>
+        
+        <div class="input-group">
+            <label for="localArea">📍 Local Projection Area (acres)</label>
+            <input type="number" id="localArea" step="0.01" min="0" value="1">
+        </div>
+
+        <div class="input-group">
+            <label for="distance">📏 Distance from CM (km)</label>
+            <input type="number" id="distance" step="1" min="0" value="250">
+        </div>
+
+        <button onclick="calculate()">📐 Calculate</button>
+
+        <div class="results">
+            <h3>📊 Calculation Results</h3>
+            <div class="result-item">
+                <div>Grid Scale Factor (k):</div>
+                <span id="scaleFactor">-</span>
+            </div>
+            <div class="result-item">
+                <div>National Projection Area:</div>
+                <span id="nationalArea">-</span><span class="unit">acres</span>
+            </div>
+
+            <div class="difference-heading">
+                Area Difference Between Projections
+            </div>
+
+            <div class="result-item area-difference">
+                <div>In Acres:</div>
+                <span id="areaDifferenceA">-</span><span class="unit">acres</span>
+            </div>
+            <div class="result-item area-difference">
+                <div>In Square Meters:</div>
+                <span id="areaDifferenceM">-</span><span class="unit">m²</span>
+            </div>
+            <div class="result-item area-difference">
+                <div>In Square Feet:</div>
+                <span id="areaDifferenceF">-</span><span class="unit">ft²</span>
+            </div>
+
+            <div class="label">
+                <div><h3>Formula Used:</h3></div>
+                <!-- <span id="areaDifferenceF">-</span><span class="unit">ft²</span> -->
+            </div>
+
+            <div class="formula-section">
+                <img src="images/formula.png" alt="Projection Formula" class="formula-image">
+            </div>
+
+            <div class="cta-section">
+                <a href="https://chokila.github.io/Bhutan-CentralMeridian/" class="button-link" target="_blank">
+                    Click here to compute the distance from CM
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
